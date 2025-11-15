@@ -40,6 +40,31 @@ Then open http://localhost:8788 in your browser.
 
 ## Deploying
 
+### Auto-Deploy with GitHub Actions (Recommended)
+
+The project auto-deploys on every push to `main` branch.
+
+**Setup:**
+
+1. Get your Cloudflare API Token:
+   - Go to https://dash.cloudflare.com/profile/api-tokens
+   - Create a token with "Edit Cloudflare Workers" permissions
+
+2. Add the token to GitHub:
+   - Go to your repo Settings → Secrets and variables → Actions
+   - Create a new secret named `CLOUDFLARE_API_TOKEN`
+   - Paste your API token
+
+3. On first deployment, create the Pages project manually:
+   ```bash
+   npx wrangler login
+   npx wrangler pages project create cf-ai-assistant --production-branch=main
+   ```
+
+4. Commit and push to `main` - it will auto-deploy!
+
+### Manual Deploy
+
 First login to Cloudflare:
 ```bash
 npx wrangler login
