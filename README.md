@@ -3,10 +3,7 @@
 AI chat assistant built on Cloudflare's platform using Llama 3.3, with conversation memory powered by Durable Objects.
 
 ## Live Demo
-
-- **API**: https://cf-ai-intelligent-assistant.emonhoque.workers.dev
-- **Chat UI**: https://ae6ef50b.cf-ai-assistant-76b.pages.dev
-
+- **Chat UI**: cf-ai-assistant-76b.pages.dev
 ## What it does
 
 This is a chat application where you can have conversations with Llama 3.3. The conversations are saved using Cloudflare Durable Objects, so when you refresh the page your chat history is still there. Everything runs on Cloudflare's edge network.
