@@ -23,9 +23,13 @@ jobs:
       - name: Deploy Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npx wrangler deploy
+        run: |
+          echo "Deploying Worker..."
+          npx wrangler@latest deploy
 
       - name: Deploy Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npx wrangler pages deploy public --project-name=cf-ai-assistant
+        run: |
+          echo "Deploying Pages..."
+          npx wrangler@latest pages deploy public --project-name=cf-ai-assistant
