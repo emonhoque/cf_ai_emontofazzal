@@ -1,0 +1,21 @@
+name = "cf-ai-intelligent-assistant"
+main = "src/index.ts"
+compatibility_date = "2025-11-14"
+
+# Bind the AI service
+[ai]
+binding = "AI"
+
+# Durable Object bindings for conversation state
+[[durable_objects.bindings]]
+name = "CONVERSATIONS"
+class_name = "ConversationState"
+
+# Migrations for Durable Objects (free plan compatible)
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ConversationState"]
+
+# CORS settings for Pages integration
+[vars]
+ALLOWED_ORIGINS = "*"
